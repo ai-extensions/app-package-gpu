@@ -4,7 +4,7 @@ channels:
 dependencies:
 - cudatoolkit=11.5.0
 - python=3.10
+- pip
 - pip:
   - nvidia-cudnn-cu11==8.6.0.163 
   - tensorflow==2.12.*
-
