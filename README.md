@@ -16,6 +16,7 @@ cwltool --no-container app-package.cwl#gpu-assert
 
 ```
 calrissian \
+    --debug \
     --stdout /calrissian/results.json \
     --stderr /calrissian/app.log \
     --max-ram 16G \
