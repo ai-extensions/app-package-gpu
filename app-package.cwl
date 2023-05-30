@@ -19,13 +19,19 @@ $graph:
   
   inputs: []
 
-  outputs: []
+  outputs:
+    - id: stac_catalog
+      outputSource:
+      - node_gpu/out
+      type: File
  
   steps:
     node_gpu:
       run: "#cli"
       in: []
-      out: []
+      out: 
+      - out 
+            
 
 - class: CommandLineTool
   id: cli
@@ -44,9 +50,13 @@ $graph:
 
   hints:
     DockerRequirement:
-      dockerPull: gpu-assert:latest
+      dockerPull: cr.terradue.com/ellip-studio/gpu-assert@sha256:792880fac439f99a04cd2c366d1058253c049a829452cd725258e104ebe1e9f2
   
   baseCommand: ["python", "-m", "app"]
+  stdout: output.txt
   arguments: []
   inputs: []
-  outputs: []
+  
+  outputs: 
+    out:
+      type: stdout
